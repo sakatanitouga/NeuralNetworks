@@ -31,7 +31,7 @@ void setup()
 
   Serial.begin(9600);
   NeuralNetwork NN(layers, NumberOf(layers), Actv_Functions); // Creating a Neural-Network with default learning-rates
-
+  //学習フェーズ
   do{ 
     for (int j=0; j < NumberOf(inputs); j++) // Epoch
     {
@@ -49,7 +49,7 @@ void setup()
 
   Serial.println("\n =-[OUTPUTS]-=");
 
-
+  //推論フェーズ
   for (int i=0; i < NumberOf(inputs); i++) //Goes through all input-arrays/Training-Data
   {
     output = NN.FeedForward(inputs[i]);    // FeedForwards the input[i]-array through the NN | returns the predicted output(s)
